@@ -6,7 +6,8 @@ It's reduces wait of robots for getting contents page.
 ## Docker usage
 
 ```bash
-docker run -it --rm --init -e DEBUG=1 spacetabio/roastmap:1.0.0 start https://google.com --parallel=3 --times=1 --delay=3000
+docker run -it --rm --init -e DEBUG=1 spacetabio/roastmap:1.0.0 \
+    start https://google.com --parallel=3 --times=1 --delay=3000
 ```
 
 ## Usage
