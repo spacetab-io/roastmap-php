@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+
+use Prerender\Roastmap\Console\RunCommand;
+use Symfony\Component\Console\Application;
+
+$locations = [
+    __DIR__ . '/../../../autoload.php',
+    __DIR__ . '/../vendor/autoload.php',
+    __DIR__ . '/vendor/autoload.php'
+];
+
+foreach ($locations as $file) {
+    if (file_exists($file)) {
+        require_once $file;
+        break;
+    }
+}
+
+$app = new Application('Roastmap', '1.0.0');
+$app->add(new RunCommand());
+$app->run();
