@@ -162,7 +162,7 @@ class Roastmap
 
             /** @var \Amp\Http\Client\Response $response */
             $response = yield $client->request($request);
-            $body = yield $response->getBody()->read();
+            $body = yield $response->getBody()->buffer();
 
             return [
                 $response->getStatus(), strlen($body)
